@@ -1,0 +1,11 @@
+VIEW CatalogService_BusinessPartnerSrv AS SELECT
+  BusinessPartners_0.NODE_KEY,
+  BusinessPartners_0.BP_ROLE,
+  BusinessPartners_0.EMAIL,
+  BusinessPartners_0.MOBILE,
+  BusinessPartners_0.FAX,
+  BusinessPartners_0.WEB,
+  BusinessPartners_0.BP_ID,
+  BusinessPartners_0.COMPANY_NAME,
+  BusinessPartners_0.AD_NODE_KEY
+FROM poapplication2_db_master_BusinessPartners AS BusinessPartners_0

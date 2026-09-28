@@ -1,0 +1,11 @@
+VIEW CatalogService_PurchaseOrderSrv AS SELECT
+  PurchaseOrders_0.GROSS_AMOUNT,
+  PurchaseOrders_0.NET_AMOUNT,
+  PurchaseOrders_0.TAX_AMOUNT,
+  PurchaseOrders_0.CURRENCY_code,
+  PurchaseOrders_0.NODE_KEY,
+  PurchaseOrders_0.PO_ID,
+  PurchaseOrders_0.PARTNER_NODE_KEY,
+  PurchaseOrders_0.LIFECYCLE_STATUS,
+  PurchaseOrders_0.OVERALL_STATUS
+FROM poapplication2_db_transaction_PurchaseOrders AS PurchaseOrders_0

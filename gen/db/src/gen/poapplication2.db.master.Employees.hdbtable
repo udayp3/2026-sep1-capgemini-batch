@@ -1,0 +1,18 @@
+COLUMN TABLE poapplication2_db_master_Employees (
+  ID NVARCHAR(36) NOT NULL,
+  nameFirst NVARCHAR(64),
+  nameLast NVARCHAR(64),
+  nameInitials NVARCHAR(64),
+  nameMiddle NVARCHAR(64),
+  gender NVARCHAR(1),
+  "LANGUAGE" NVARCHAR(2),
+  loginName NVARCHAR(16),
+  phoneNumber NVARCHAR(32),
+  email NVARCHAR(255),
+  Currency_code NVARCHAR(3),
+  salaryAmount DECIMAL(10, 2),
+  accountNumber NVARCHAR(32),
+  bankId NVARCHAR(16),
+  bankName NVARCHAR(64),
+  PRIMARY KEY(ID)
+)

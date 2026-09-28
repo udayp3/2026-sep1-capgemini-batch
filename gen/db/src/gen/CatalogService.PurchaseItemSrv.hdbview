@@ -1,0 +1,10 @@
+VIEW CatalogService_PurchaseItemSrv AS SELECT
+  PurchaseItems_0.GROSS_AMOUNT,
+  PurchaseItems_0.NET_AMOUNT,
+  PurchaseItems_0.TAX_AMOUNT,
+  PurchaseItems_0.CURRENCY_code,
+  PurchaseItems_0.NODE_KEY,
+  PurchaseItems_0.PARENT_NODE_KEY,
+  PurchaseItems_0.PO_ITEM_POS,
+  PurchaseItems_0.PRODUCT_NODE_KEY
+FROM poapplication2_db_transaction_PurchaseItems AS PurchaseItems_0

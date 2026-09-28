@@ -1,0 +1,308 @@
+###
+GET http://localhost:4004/odata/v4/catalog/EmployeeSrv
+
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv
+
+###
+GET http://localhost:4004/odata/v4/catalog/BusinessPartnerSrv
+
+###
+POST http://localhost:4004/odata/v4/catalog/createEmployee
+Content-Type: application/json
+
+{
+    "Currency_code": "USD",
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c47a8",
+    "accountNumber": "343",
+    "bankId": "101",
+    "bankName": "sbi",
+    "email": "uday.mca24@cmrit.ac.in",
+    "gender": "M",
+    "language": "E",
+    "loginName": "RAMAM",
+    "nameFirst": "Rama",
+    "nameInitials": "p",
+    "nameLast": "Murthy",
+    "nameMiddle": "p",
+    "phoneNumber": "(+1) 9898989898",
+    "salaryAmount": "45000.00"
+}
+###
+POST http://localhost:4004/odata/v4/catalog/createAddress
+Content-Type: application/json
+
+{
+    "ADDRESS_TYPE": "HOME",
+    "BUILDING": "Capgemini Tower",
+    "CITY": "Bangalore",
+    "COUNTRY": "India",
+    "LATITUDE": 12.9716,
+    "LONGITUDE": 77.5946,
+    "NODE_KEY": "ADDR1001",
+    "POSTAL_CODE": "560001",
+    "STREET": "MG Road",
+    "VAL_END": "2027-09-21",
+    "VAL_START": "2026-09-21"
+}
+###
+POST http://localhost:4004/odata/v4/catalog/updateEmployee
+Content-Type: application/json
+
+{
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c40a2",
+    "salaryAmount": "50000.00",
+    "Currency_code": "USD"
+}
+###
+POST http://localhost:4004/odata/v4/catalog/createProduct
+Content-Type: application/json
+
+{
+    "NODE_KEY": "PROD1001",
+    "PRODUCT_ID": "P1002",
+    "TYPE_CODE": "EL",
+    "CATEGORY": "Electronics",
+    "DESCRIPTION": "Laptop",
+    "TAX_TARIF_CODE": 18,
+    "MEASURE_UNIT": "EA",
+    "WEIGHT_MEASURE": 2.50,
+    "WEIGHT_UNIT": "KG",
+    "PRICE": 55000.00,
+    "CURRENCY_CODE": "INR",
+    "WIDTH": 35.50,
+    "DEPTH": 25.00,
+    "HEIGHT": 2.00,
+    "DIM_UNIT": "CM"
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/createBusinessPartner
+Content-Type: application/json
+
+{
+    "NODE_KEY": "BP1001",
+    "BP_ROLE": "SR",
+    "EMAIL": "supplier@gmail.com",
+    "MOBILE": "9876543210",
+    "FAX": "080123456",
+    "WEB": "www.supplier.com",
+    "BP_ID": "BP001",
+    "COMPANY_NAME": "ABC Technologies"
+}
+###
+POST http://localhost:4004/odata/v4/catalog/updateProduct
+Content-Type: application/json
+
+{
+    "NODE_KEY": "PROD1001",
+    "PRICE": 65000.00,
+    "CURRENCY_CODE": "USD"
+}
+###
+POST http://localhost:4004/odata/v4/catalog/deleteEmployee
+Content-Type: application/json
+
+{
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c47a8"
+}
+
+###
+PUT http://localhost:4004/odata/v4/catalog/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C197C7FB
+Content-Type: application/json
+
+{
+    "salaryAmount": "2326872.00",
+    "Currency_code": "USD"
+}
+
+### Valid Item Position
+PUT http://localhost:4004/odata/v4/catalog/PurchaseItemSrv(00163E03-3E6D-1ED8-B714-7E6A6D4B6A01)
+Content-Type: application/json
+
+{
+    "PO_ITEM_POS": 11
+}
+
+###3
+PUT http://localhost:4004/odata/v4/catalog/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C19807FB
+Content-Type: application/json
+ 
+{
+"phoneNumber": "+91155551234"
+}
+
+###
+PUT http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv/74867AD200E41EDBA5D8B0C98DC28052
+Content-Type: application/json
+ 
+{
+    "Gross_Amt":"19000",
+    "CURRENCY_code":"EUR"
+}
+ 
+
+###
+PUT http://localhost:4004/odata/v4/catalog/BusinessPartnerSrv(005056A8-BB6A-1ED4-818F-0C4FD5F31EAA)
+Content-Type: application/json
+
+{
+    "COMPANY_NAME": ",SAP India"
+}
+
+### Get All Products
+GET http://localhost:4004/odata/v4/catalog/ProductSrv
+
+### Count Products
+GET http://localhost:4004/odata/v4/catalog/ProductSrv/$count
+
+### Top 10 Products
+GET http://localhost:4004/odata/v4/catalog/ProductSrv?$top=10
+
+### Pagination
+GET http://localhost:4004/odata/v4/catalog/ProductSrv?$top=10&$skip=10
+
+### Filter Products
+GET http://localhost:4004/odata/v4/catalog/ProductSrv?$filter=CATEGORY eq 'Notebooks' and DIM_UNIT eq 'CM'
+
+### Select Specific Fields
+GET http://localhost:4004/odata/v4/catalog/ProductSrv?$select=PRODUCT_ID,DESCRIPTION,CATEGORY,PRICE
+
+### Sort Descending
+GET http://localhost:4004/odata/v4/catalog/ProductSrv?$orderby=PRODUCT_ID desc
+
+### 1. Category Name and Description
+GET services.odata.org/V4/Northwind/Northwind.svc/Categories?$select=CategoryName,Description
+
+### 2. Customers in London
+GET services.odata.org/V4/Northwind/Northwind.svc/Customers?$filter=City eq 'London'&$select=CustomerID,CompanyName,ContactName,City
+
+### 3. Suppliers Having Fax Number
+GET services.odata.org/V4/Northwind/Northwind.svc/Suppliers?$filter=Fax ne null
+
+### 4. Customer IDs from Orders with RequiredDate and Freight
+GET services.odata.org/V4/Northwind/Northwind.svc/Orders?$select=CustomerID&$filter=OrderDate ge 1997-01-01T00:00:00Z and OrderDate lt 1998-01-01T00:00:00Z
+
+### 5. Company Name and Contact Name from Mexico, Sweden, Germany
+GET services.odata.org/V4/Northwind/Northwind.svc/Customers?$select=CompanyName,ContactName&$filter=Country eq 'Mexico' or Country eq 'Sweden' or Country eq 'Germany'
+
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Products/$count?$filter=Discontinued eq true
+
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Categories?$select=CategoryName,Description&$filter=startswith(CategoryName,'Co')
+
+### Suppliers with 'rue' in Address
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers?$select=CompanyName,City,Country,PostalCode&$filter=contains(Address,'rue')&$orderby=CompanyName
+
+### Product ID and Total Quantity Ordered
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Order_Details_Extendeds?$select=ProductID,Quantity&%apply=groupby(ProductID)
+
+### Customers with Orders Shipped by Speedy Express
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Customers?$select=CompanyName,Address&$expand=Orders($filter=ShipVia eq 1)
+
+###Suppliers - Company Name, Contact Name, Contact Title, Region
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers?$select=CompanyName,ContactName,ContactTitle,Region
+
+### Product Names that are Condiments
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Products?$select=ProductName&$filter=CategoryID eq 2
+
+### Customers Who Have No Orders
+https://services.odata.org/V4/Northwind/Northwind.svc/Products?$select=ProductName&$filter=CategoryID%20eq%202
+ 
+###
+https://services.odata.org/V4/Northwind/Northwind.svc/Shippers?$expand=Orders($select=Freight)
+ 
+###10
+https://services.odata.org/V4/Northwind/Northwind.svc/Employees?$select=FirstName,LastName
+ 
+###11
+https://services.odata.org/V4/Northwind/Northwind.svc/Products?$select=ProductName,UnitsInStock&$filter=UnitsInStock gt 100
+ 
+###12
+https://services.odata.org/V4/Northwind/Northwind.svc/Employees?$select=FirstName,LastName,Address,City,Region
+ 
+###13
+https://services.odata.org/V4/Northwind/Northwind.svc/Employees?$select=FirstName,LastName,Address,City,Region,Country&$filter=Country%20eq%20%27USA%27
+ 
+###14
+https://services.odata.org/V4/Northwind/Northwind.svc/Employees?$select=FirstName,LastName,Address,City,Region,BirthDate&$filter=BirthDate%20lt%201976-01-01T00:00:00Z
+ 
+###15
+https://services.odata.org/V4/Northwind/Northwind.svc/Employees?$select=Title,FirstName,LastName&$expand=Orders($expand=Order_Details($expand=Product))&$filter=Orders/any(o:o/Order_Details/any(od:od/Product/ProductName%20eq%20%27Gravad%20Lax%27%20or%20od/Product/ProductName%20eq%20%27Mishi%20Kobe%20Niku%27))
+
+### Get Highest Salaried Employees
+GET http://localhost:4004/odata/v4/catalog/getHighestSalariedEmployees()
+
+### Get Highest Priced Products
+GET http://localhost:4004/odata/v4/catalog/getHighestPricedProduct()
+
+###@readonly
+POST http://localhost:4004/odata/v4/catalog/EmployeeSrv
+Content-Type: application/json
+
+{
+    "Currency_code": "USD",
+    "ID": "2a5776ec-e711-4c1a-a92a-2da5b46c11b8",
+    "accountNumber": null,
+    "bankId": null,
+    "bankName": null,
+    "email": null,
+    "gender": "M",
+    "language": "E",
+    "loginName": "RAM",
+    "nameFirst": "Rama",
+    "nameInitials": null,
+    "nameLast": "Murthy",
+    "nameMiddle": null,
+    "phoneNumber": "(+1) 9898989898",
+    "salaryAmount": "45000.00"
+}
+
+###@insertonly
+GET http://localhost:4004/odata/v4/catalog/EmployeeSrv
+
+### Discount Price
+POST http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv/74867AD200E41EDBA5D8B0C98DE00052/discountPrice
+Content-Type: application/json
+
+{}
+
+### Largest Order
+GET http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv/74867AD200E41EDBA5D8B0C980C2A052/largestOrder()
+
+### Get All Purchase Orders
+GET http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv
+
+###increase price by 10%
+POST http://localhost:4004/odata/v4/catalog/ProductSrv(ID='<PRODUCT_ID>')/CatalogService.increasePrice
+Content-Type: application/json
+
+{}
+
+### Increase Price
+POST http://localhost:4004/odata/v4/catalog/ProductSrv/74867AD200E41EDBA5D8B06B26EB4052/increasePrice
+Content-Type: application/json
+
+{}
+
+### Top 20 Products
+GET http://localhost:4004/odata/v4/catalog/ProductSrv/74867AD200E41EDBA5D8B06B26EB4052/getTop20Products()
+
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv
+
+### Increase Employee Salary by 15%
+POST http://localhost:4004/odata/v4/catalog/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C19787FB/increaseSalary
+Content-Type: application/json
+
+{}
+
+###
+GET http://localhost:4004/odata/v4/catalog/EmployeeSrv
+
+### Top 20 Highest Paid Employees
+GET http://localhost:4004/odata/v4/catalog/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C19787FB/getTop20HighestPaidEmployees()
+
+### Get Utilities
+GET http://localhost:4004/odata/v4/catalog/getUtilities()

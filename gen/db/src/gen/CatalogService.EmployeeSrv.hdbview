@@ -1,0 +1,17 @@
+VIEW CatalogService_EmployeeSrv AS SELECT
+  Employees_0.ID,
+  Employees_0.nameFirst,
+  Employees_0.nameLast,
+  Employees_0.nameInitials,
+  Employees_0.nameMiddle,
+  Employees_0.gender,
+  Employees_0."LANGUAGE",
+  Employees_0.loginName,
+  Employees_0.phoneNumber,
+  Employees_0.email,
+  Employees_0.Currency_code,
+  Employees_0.salaryAmount,
+  Employees_0.accountNumber,
+  Employees_0.bankId,
+  Employees_0.bankName
+FROM poapplication2_db_master_Employees AS Employees_0

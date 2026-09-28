@@ -1,0 +1,18 @@
+VIEW CatalogService_ProductSrv AS SELECT
+  Products_0.NODE_KEY,
+  Products_0.PRODUCT_ID,
+  Products_0.TYPE_CODE,
+  Products_0.CATEGORY,
+  Products_0.DESCRIPTION,
+  Products_0.TAX_TARIF_CODE,
+  Products_0.MEASURE_UNIT,
+  Products_0.WEIGHT_MEASURE,
+  Products_0.WEIGHT_UNIT,
+  Products_0.PRICE,
+  Products_0.CURRENCY_CODE,
+  Products_0.WIDTH,
+  Products_0."DEPTH",
+  Products_0.HEIGHT,
+  Products_0.DIM_UNIT,
+  Products_0.SUPPLIERS_NODE_KEY
+FROM poapplication2_db_master_Products AS Products_0

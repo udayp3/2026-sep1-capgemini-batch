@@ -1,0 +1,13 @@
+VIEW CatalogService_AddressSrv AS SELECT
+  Addresses_0.STREET,
+  Addresses_0.POSTAL_CODE,
+  Addresses_0.CITY,
+  Addresses_0.COUNTRY,
+  Addresses_0.BUILDING,
+  Addresses_0.NODE_KEY,
+  Addresses_0.ADDRESS_TYPE,
+  Addresses_0.VAL_START,
+  Addresses_0.VAL_END,
+  Addresses_0.LATITUDE,
+  Addresses_0.LONGITUDE
+FROM poapplication2_db_master_Addresses AS Addresses_0
